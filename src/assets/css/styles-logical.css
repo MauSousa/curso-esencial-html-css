@@ -38,7 +38,14 @@
 
 body {
   color: var(--principal);
-  font-family: charter;
+  font-family: 'Roboto', sans-serif;
+  /* font-family: charter; */
+}
+
+.hero {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.3), transparent),
+    url(../images/patron-1.png);
+  height: 350px;
 }
 
 header {
@@ -62,7 +69,7 @@ nav details summary {
 
 h1 {
   font-size: 60px;
-  /* font-weight: var(--peso); */
+  font-weight: var(--peso);
 }
 
 h2 {
@@ -70,9 +77,26 @@ h2 {
   font-weight: var(--peso);
 }
 
-h3 {
+.section-content {
+  counter-reset: titleList;
+}
+
+.section-content h3 {
   font-size: 24px;
   font-weight: var(--peso);
+  counter-increment: titleList;
+}
+
+.section-content h3::before {
+  content: counter(titleList, decimal);
+}
+
+.section-content h3::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: var(--parrafos);
+  display: inline-block;
 }
 
 p {
@@ -81,6 +105,10 @@ p {
 
 .contenido {
   font-size: 14px;
+}
+
+pre {
+  background: #fec62e;
 }
 
 footer {
