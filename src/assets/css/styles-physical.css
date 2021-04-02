@@ -39,7 +39,7 @@
 body {
   color: var(--principal);
   font-family: 'Roboto', sans-serif;
-  /* font-family: charter; */
+  margin: 0;
 }
 
 .hero {
@@ -70,15 +70,42 @@ nav details summary {
 h1 {
   font-size: 60px;
   font-weight: var(--peso);
+  margin-top: 64px;
+  margin-bottom: 16px;
+}
+
+h1 + p {
+  margin-bottom: 64px;
 }
 
 h2 {
   font-size: 32px;
   font-weight: var(--peso);
+  margin: 40px 0 64px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  font-weight: normal;
+}
+
+.section-content + hr {
+  display: none;
+}
+
+.section-content img {
+  margin-top: 40px;
 }
 
 .section-content {
   counter-reset: titleList;
+  margin-top: 164px;
+}
+
+.section-content:first-of-type {
+  margin: 0;
 }
 
 .section-content h3 {
@@ -99,8 +126,20 @@ h2 {
   display: inline-block;
 }
 
+.section-content ol li {
+  line-height: 24px;
+}
+
+.section-content ul li {
+  margin-bottom: 16px;
+}
+
 p {
   font-weight: var(--peso);
+}
+
+hr {
+  margin: 64px 0;
 }
 
 .contenido {
@@ -109,6 +148,10 @@ p {
 
 pre {
   background: #fec62e;
+}
+
+blockquote {
+  margin: 32px 0;
 }
 
 footer {
