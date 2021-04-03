@@ -36,6 +36,10 @@
   --pesoParrafo: 700;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--principal);
   font-family: 'Roboto', sans-serif;
@@ -48,15 +52,31 @@ body {
   height: 350px;
 }
 
+/* .header {
+  position: sticky;
+  top: 0;
+} */
+
 header {
   font-size: 14px;
+  width: 188px;
   color: var(--enlaces);
   font-weight: var(--peso);
+  position: absolute;
+  top: 64px;
+  left: -232px;
+  z-index: 1;
+  cursor: pointer;
+  line-height: 24px;
 }
 
 header a {
   color: var(--enlaces);
   text-decoration: none;
+}
+
+header li {
+  margin-bottom: 16px;
 }
 
 header a:hover {
@@ -67,6 +87,24 @@ nav details summary {
   font-weight: bold;
 }
 
+.header-content {
+  position: relative;
+}
+
+.main {
+  position: relative;
+}
+
+.wrapper {
+  width: 902px;
+  margin: auto;
+}
+
+.main-content {
+  background: white;
+  /* padding: 20px; */
+}
+
 h1 {
   font-size: 60px;
   font-weight: var(--peso);
@@ -74,9 +112,9 @@ h1 {
   margin-bottom: 16px;
 }
 
-h1 + p {
+/* h1 + p {
   margin-bottom: 64px;
-}
+} */
 
 h2 {
   font-size: 32px;
@@ -89,6 +127,7 @@ h3 {
   margin-top: 16px;
   margin-bottom: 24px;
   font-weight: normal;
+  position: relative;
 }
 
 .section-content + hr {
@@ -101,7 +140,8 @@ h3 {
 
 .section-content {
   counter-reset: titleList;
-  margin-top: 164px;
+  margin-top: 64px;
+  position: relative;
 }
 
 .section-content:first-of-type {
@@ -109,21 +149,23 @@ h3 {
 }
 
 .section-content h3 {
-  font-size: 24px;
-  font-weight: var(--peso);
   counter-increment: titleList;
+  padding-bottom: 8px;
 }
 
 .section-content h3::before {
-  content: counter(titleList, decimal);
+  content: counter(titleList, decimal) '. ';
 }
 
 .section-content h3::after {
   content: '';
-  width: 80px;
+  width: 84px;
   height: 4px;
   background: var(--parrafos);
   display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .section-content ol li {
@@ -148,10 +190,29 @@ hr {
 
 pre {
   background: #fec62e;
+  padding: 40px;
+  font-family: 'Roboto';
+  line-height: 24px;
 }
 
 blockquote {
   margin: 32px 0;
+  padding-left: 16px;
+  font-size: 24px;
+  border-left: 4px solid var(--principal);
+  line-height: 24px;
+}
+
+blockquote span {
+  color: var(--enlaces);
+}
+
+blockquote span::before {
+  content: '-';
+}
+
+.img {
+  width: 862px;
 }
 
 footer {
